@@ -37,6 +37,16 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+    flavorDimensions += "default"
+    productFlavors {
+        create("user") {
+            resValue("string", "app_name", "Hotspots")
+        }
+        create("admin") {
+            resValue("string", "app_name", "Hotspots-admin")
+            applicationIdSuffix = ".admin"
+        }
+    }
 }
 
 flutter {
