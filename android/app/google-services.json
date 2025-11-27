@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "41260928318",
+    "project_id": "hotspot-ece88",
+    "storage_bucket": "hotspot-ece88.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41260928318:android:bf95eb55f11e363c11706f",
+        "android_client_info": {
+          "package_name": "com.example.hotspot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpRuYcytKtHlOiUx8w_IEg6-HSPEkwCaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41260928318:android:1e708c7650a18b3011706f",
+        "android_client_info": {
+          "package_name": "com.example.hotspot.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpRuYcytKtHlOiUx8w_IEg6-HSPEkwCaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
