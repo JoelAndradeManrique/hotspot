@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotspot/core/common/widgets/my_button.dart';
 import 'package:hotspot/core/theme/color.dart';
-import 'package:hotspot/feature/user/singup_screen.dart';
+import 'package:hotspot/feature/user/auth/screen/singup_screen.dart';
 import 'package:hotspot/go_route.dart';
 
 class UserLoginScreen extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotspot/feature/admin/admin_login_screen.dart';
-import 'package:hotspot/feature/user/user_login_screen.dart';
+import 'package:hotspot/feature/user/auth/screen/user_login_screen.dart';
 import 'package:hotspot/global.dart';
 
 class MyApp extends StatelessWidget {
