@@ -6,7 +6,7 @@ class AuthFormState {
   final String? emailError;
   final String? passwordError;
   final bool isLoading;
-  final bool isPasseordHidden;
+  final bool isPasswordHidden;
 
   AuthFormState({
     this.name = '',
@@ -16,11 +16,33 @@ class AuthFormState {
     this.emailError,
     this.passwordError,
     this.isLoading = false,
-    this.isPasseordHidden = true,
+    this.isPasswordHidden = true,
   });
 
   bool get isFormvalid =>
       emailError == null &&
       passwordError == null &&
       (name.isEmpty || nameError == null);
+
+  AuthFormState copyWith({
+    String? name,
+    String? email,
+    String? password,
+    String? nameError,
+    String? emailError,
+    String? passwordError,
+    bool? isLoading,
+    bool? isPasswordHidden,
+  }) {
+    return AuthFormState(
+      name: name ?? this.name,
+      email: email ?? this.email,
+      password: password ?? this.password,
+      nameError: nameError,
+      emailError: emailError,
+      passwordError: passwordError,
+      isLoading: isLoading ?? this.isLoading,
+      isPasswordHidden: isPasswordHidden ?? this.isPasswordHidden,
+    );
+  }
 }

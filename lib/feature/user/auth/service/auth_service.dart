@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AuthMethod {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -31,4 +32,32 @@ class AuthMethod {
       return e.toString();
     }
   }
+
+  //login user
+    Future<String> loginUser({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      if (email.isEmpty || password.isEmpty) {
+        return "Please enter all fields";
+      }
+      await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return "success";
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  //logout
+  Future<void> singOut() async {
+    await _auth.signOut();
+  }
 }
+
+final AuthMethodProvider = Provider<AuthMethod>((ref) {
+  return AuthMethod();
+}); 
