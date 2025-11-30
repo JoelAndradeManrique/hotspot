@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hotspot/core/common/widgets/my_button.dart';
 import 'package:hotspot/core/theme/color.dart';
 import 'package:hotspot/core/utils/utils.dart';
+import 'package:hotspot/feature/shared/screen/google_login_screen.dart';
 import 'package:hotspot/feature/user/auth/screen/singup_screen.dart';
 import 'package:hotspot/feature/user/auth/service/auth_provider.dart';
 import 'package:hotspot/feature/user/auth/service/auth_service.dart';
@@ -112,6 +113,10 @@ class UserLoginScreen extends ConsumerWidget {
                       ),
                     ],
                   ),
+                  SizedBox(height: 15),
+                  //for google authentication
+                  GoogleLoginScreen(),
+                  SizedBox(height: 15),
                   Row(
                     children: [
                       Spacer(),
