@@ -12,7 +12,20 @@
           "package_name": "com.example.hotspot"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "41260928318-d1d4abosaj4cu68dg9sphjlc31uuepbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotspot",
+            "certificate_hash": "c9721de7190fcbc9085d99dcb10f7fdcc7256a41"
+          }
+        },
+        {
+          "client_id": "41260928318-db5c85u8had4gvr0ihh1a18uo7rsee7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCpRuYcytKtHlOiUx8w_IEg6-HSPEkwCaQ"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41260928318-db5c85u8had4gvr0ihh1a18uo7rsee7o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41260928318-7cn5qvaenskm13pn2i0p1acaot98nvp4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hotspot"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +56,20 @@
           "package_name": "com.example.hotspot.admin"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "41260928318-ngkh2i052ams4jfdj9cduba6tpjesutu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotspot.admin",
+            "certificate_hash": "c9721de7190fcbc9085d99dcb10f7fdcc7256a41"
+          }
+        },
+        {
+          "client_id": "41260928318-db5c85u8had4gvr0ihh1a18uo7rsee7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCpRuYcytKtHlOiUx8w_IEg6-HSPEkwCaQ"
@@ -39,7 +77,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41260928318-db5c85u8had4gvr0ihh1a18uo7rsee7o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41260928318-7cn5qvaenskm13pn2i0p1acaot98nvp4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hotspot"
+              }
+            }
+          ]
         }
       }
     }
