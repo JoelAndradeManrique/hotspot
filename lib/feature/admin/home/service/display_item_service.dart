@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hotspot/core/utils/utils.dart';
 import 'package:hotspot/feature/shared/Model/disply_items_model.dart';
 
 final adminHotSpots = StreamProvider<List<Hotspot>>((ref) {
@@ -29,3 +31,34 @@ final adminHotSpots = StreamProvider<List<Hotspot>>((ref) {
 final authStateProvider = StreamProvider<User?>((ref) {
   return FirebaseAuth.instance.authStateChanges();
 });
+
+Future<void> deleteHotspot(BuildContext context, String hotspotsId) async {
+  try {
+    await FirebaseFirestore.instance
+        .collection("hotspot")
+        .doc(hotspotsId)
+        .delete();
+    mySnackBar(message: "Hotspots deleted successfully", context: context);
+  } catch (e) {
+    mySnackBar(message: "Error deleting hotspots $e", context: context);
+  }
+}
+
+Future<void> updateHotspotsConditions(
+  BuildContext context,
+  String hotspotsId,
+  String newCondition,
+) async {
+  try {
+    await FirebaseFirestore.instance
+        .collection("hotspot")
+        .doc(hotspotsId)
+        .update({'contidion': newCondition});
+    mySnackBar(
+      message: "Hotspots Condition updated successfully",
+      context: context,
+    );
+  } catch (e) {
+    mySnackBar(message: "Error dupdating contidion: $e", context: context);
+  }
+}

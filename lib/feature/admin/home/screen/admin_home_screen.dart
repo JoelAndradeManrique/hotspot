@@ -5,6 +5,8 @@ import 'package:hotspot/core/provider/load_marker_provider.dart';
 import 'package:hotspot/core/utils/utils.dart';
 import 'package:hotspot/feature/admin/home/screen/add_items_screen.dart';
 import 'package:hotspot/feature/admin/home/service/display_item_service.dart';
+import 'package:hotspot/feature/admin/home/widgets/edit_dialog_box.dart';
+import 'package:hotspot/feature/admin/home/widgets/update_dialog_box.dart';
 import 'package:hotspot/feature/shared/service/google_auth_service.dart';
 import 'package:hotspot/go_route.dart';
 
@@ -54,6 +56,13 @@ class AdminHomeScreen extends ConsumerWidget {
               final hotspot = hotspots[index];
               return GestureDetector(
                 //each hotspot is a card with details and a map
+                //long press to show a dialog for deliting or editing the hotspot
+                onLongPress: () => showEditConfirmationDialog(
+                  context,
+                  hotspot.id,
+                  hotspot.condition,
+                ),
+
                 child: Card(
                   margin: EdgeInsets.symmetric(vertical: 8),
                   elevation: 0.1,
@@ -79,7 +88,7 @@ class AdminHomeScreen extends ConsumerWidget {
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     //adjust front size based on name length
-                                    fontSize: hotspot.locationName.length <= 32
+                                    fontSize: hotspot.locationName.length <= 25
                                         ? 18
                                         : 14,
                                   ),
@@ -125,7 +134,7 @@ class AdminHomeScreen extends ConsumerWidget {
                                   hotspot.latitude,
                                   hotspot.longitude,
                                 ),
-                                zoom: 15,
+                                zoom: 14,
                               ),
                               //display a singlemarker for the hotspot
                               markers: {
