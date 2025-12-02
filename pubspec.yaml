@@ -40,6 +40,7 @@ dependencies:
   cloud_firestore:
   google_sign_in: ^6.2.1
   lottie: ^3.3.2
+  google_maps_flutter: ^2.14.0
 
 dev_dependencies:
   flutter_test:
