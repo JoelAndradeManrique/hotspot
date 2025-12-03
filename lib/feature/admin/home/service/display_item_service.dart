@@ -16,6 +16,7 @@ final adminHotSpots = StreamProvider<List<Hotspot>>((ref) {
       //query the hotspot collection where createdBy matches the user's uid
       //only display those items on it admin dashboard screen where created by itself
       .where("createdBy", isEqualTo: user.uid)
+      .orderBy("createdAt", descending: true)
       .snapshots()
       .map(
         (snapshot) => snapshot.docs
@@ -53,12 +54,12 @@ Future<void> updateHotspotsConditions(
     await FirebaseFirestore.instance
         .collection("hotspot")
         .doc(hotspotsId)
-        .update({'contidion': newCondition});
+        .update({'condition': newCondition});
     mySnackBar(
       message: "Hotspots Condition updated successfully",
       context: context,
     );
   } catch (e) {
-    mySnackBar(message: "Error dupdating contidion: $e", context: context);
+    mySnackBar(message: "Error dupdating condition: $e", context: context);
   }
 }

@@ -4,9 +4,10 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hotspot/core/provider/load_marker_provider.dart';
 import 'package:hotspot/core/utils/utils.dart';
 import 'package:hotspot/feature/admin/home/screen/add_items_screen.dart';
+import 'package:hotspot/feature/admin/home/screen/user_mode.dart';
+import 'package:hotspot/feature/admin/home/service/add_items_service.dart';
 import 'package:hotspot/feature/admin/home/service/display_item_service.dart';
 import 'package:hotspot/feature/admin/home/widgets/edit_dialog_box.dart';
-import 'package:hotspot/feature/admin/home/widgets/update_dialog_box.dart';
 import 'package:hotspot/feature/shared/service/google_auth_service.dart';
 import 'package:hotspot/go_route.dart';
 
@@ -30,12 +31,18 @@ class AdminHomeScreen extends ConsumerWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: GestureDetector(
+              onTap: () {
+                NavigationHelper.push(context, UserModeScreen());
+              },
               child: Icon(Icons.supervised_user_circle_outlined, size: 30),
             ),
           ),
           IconButton(
             onPressed: () {
               FirebaseServices().singOutUser();
+              ref.invalidate(markerIconsProvider);
+              ref.invalidate(adminHotSpots);
+              ref.invalidate(additemProvider);
             },
             icon: Icon(Icons.logout),
           ),

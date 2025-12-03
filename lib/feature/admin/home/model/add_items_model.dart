@@ -13,7 +13,7 @@ class AddItemsState {
     this.selectedCategory,
     this.categories = const [],
     this.selectedCondition,
-    this.conditions = const ['hotspot', 'Decreasing', 'Little', 'Increasing'],
+    this.conditions = const ['Hotspot', 'Decreasing', 'Little', 'Increasing'],
     this.selectedLocation,
     this.rating,
     this.reviewCount = const [],
