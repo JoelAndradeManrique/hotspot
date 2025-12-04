@@ -5,8 +5,8 @@ import 'package:hotspot/go_route.dart';
 
 AuthMethod authMethod = AuthMethod();
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ import 'package:hotspot/feature/shared/screen/google_login_screen.dart';
 import 'package:hotspot/feature/user/auth/screen/singup_screen.dart';
 import 'package:hotspot/feature/user/auth/service/auth_provider.dart';
 import 'package:hotspot/feature/user/auth/service/auth_service.dart';
-import 'package:hotspot/feature/user/home/home_screen.dart';
+import 'package:hotspot/feature/user/home/screen/user_home_screen.dart';
 import 'package:hotspot/go_route.dart';
 
 class UserLoginScreen extends ConsumerWidget {
@@ -29,7 +29,7 @@ class UserLoginScreen extends ConsumerWidget {
       );
       formNotifer.setLoading(false);
       if (res == "success") {
-        NavigationHelper.pushReplacement(context, HomeScreen());
+        NavigationHelper.pushReplacement(context, UserHomeScreen());
         mySnackBar(message: "Successful login", context: context);
       } else {
         mySnackBar(message: res, context: context);

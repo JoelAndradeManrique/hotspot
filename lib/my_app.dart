@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hotspot/feature/admin/home/screen/admin_home_screen.dart';
 import 'package:hotspot/feature/admin/auth/admin_login_screen.dart';
 import 'package:hotspot/feature/user/auth/screen/user_login_screen.dart';
-import 'package:hotspot/feature/user/home/home_screen.dart';
+import 'package:hotspot/feature/user/home/screen/bottom_navigation_bar.dart';
+import 'package:hotspot/feature/user/home/screen/user_home_screen.dart';
+import 'package:hotspot/feature/user/landing/screen/onboarding_screen.dart';
 import 'package:hotspot/global.dart';
 
 class MyApp extends StatelessWidget {
@@ -30,11 +32,11 @@ class MyApp extends StatelessWidget {
             if (snapshot.hasData) {
               return Global.baseUrl == "Admin App"
                   ? const AdminHomeScreen()
-                  : const HomeScreen();
+                  : const NavigationBarScreen();
             } else {
               return Global.baseUrl == "Admin App"
                   ? const AdminLoginScreen()
-                  : const UserLoginScreen();
+                  : const OnboardingScreen();
             }
           },
         ),

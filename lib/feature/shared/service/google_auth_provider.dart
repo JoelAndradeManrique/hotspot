@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:hotspot/feature/shared/Model/google_auth_model.dart';
 import 'package:hotspot/feature/shared/service/google_auth_service.dart';
-import 'package:hotspot/feature/user/home/home_screen.dart';
+import 'package:hotspot/feature/user/home/screen/user_home_screen.dart';
 
 class GoogleAuthNotifier extends StateNotifier<GoogleAuthState> {
   final FirebaseServices _firebaseServices;
@@ -18,7 +18,7 @@ class GoogleAuthNotifier extends StateNotifier<GoogleAuthState> {
         await Future.delayed(Duration(milliseconds: 300));
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => UserHomeScreen()),
         );
 
         // Simulate a delay for better UX
